@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{#{% load template_extensions %}#}
+{% block title %}User Payment{% endblock %}
+{% block head %}User Payment{% endblock %}
+{% block content %}
+    <style type="text/css">
+
+    input, select {
+          background: 12px 11px no-repeat, linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
+          border-radius: 3px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+          transition: all 0.2s linear;
+          color: #222222;
+          position: relative;
+          height: 36px;
+          width: 300px;
+        }
+
+    input:focus{
+        box-shadow: 0 1px 0 #2392F3 inset, 0 -1px 0 #2392F3 inset, 1px 0 0 #2392F3 inset, -1px 0 0 #2392F3 inset, 0 0 4px rgba(35,146,243,0.5);
+        outline: none;
+        background: 12px 11px no-repeat, #FFF;
+        transform: scale(1.1); -webkit-transform: scale(1.1);-moz-transform: scale(1.1);-o-transform: scale(1.1);-ms-transform: scale(1.1);
+    }
+
+    .field{
+          color: #0C090A;
+
+    }
+    #execute_button {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border-color: #3d91cf;
+    }
+
+    div#primoInAlto{ min-width:200px; margin-top:30px;}
+    .field span {display: inline-block; width: 150px;}
+    .field span.red {display: inline-block; width: 180px; color: red;}
+    </style>
+
+    <script>
+    window.history.pushState("object or string", "Title", "/pay");
+
+      $(function() {
+    $( ".datepicker" ).datepicker({
+      dateFormat: 'dd/mm/yy',
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "{% now "Y" %}" + ":" + (parseInt("{% now "Y" %}") + 1).toString()
+      // You can put more options here.
+
+    });
+  });
+
+    </script>
+<form id="ext_payment" name="ext_payment" method="post" action="pay/">{% csrf_token %}
+{#    {{ form.non_field_errors }}#}
+    <table width="98%" border="0" style="position:relative;top: 0px;margin-left: 80px;">
+        <tbody>
+        <tr><td><br></td></tr>
+        <tr>
+            <td>
+                <div class="field"><h3>Pay your transport</h3></div></td>
+        </tr>
+        {% if  rent_dict %}
+            <tr>
+                <td  title="Transport Id">
+                    <div class="field"><span>Transport Id:</span><input id="id_transport_id" name="id_transport_id" disabled="disabled" value="{{ rent_dict.transport_id}}"></div></td>
+            </tr>
+                    <tr>
+                <td  title="Start Date">
+                    <div class="field"><span>Start Date:</span><input id="id_start_date" name="id_start_date" class="datepicker" disabled="disabled" value="{{ rent_dict.start_date}}"></div></td>
+            </tr>
+
+            <tr>
+                <td  title="End Date">
+                    <div class="field"><span>End Date:</span><input id="id_end_date" name="id_end_date" class="datepicker" disabled="disabled" value="{{ rent_dict.end_date}}"></div></td>
+            </tr>
+              <tr>
+                <td  title="First Name">
+                    <div class="field"><span>First Name:</span><input id="id_first_name" name="id_first_name" disabled="disabled" value="{{ rent_dict.first_name}}"></div></td>
+            </tr>
+             <tr>
+                <td  title="Last Name">
+                    <div class="field"><span>Last Name:</span><input id="id_last_name" name="id_last_name" disabled="disabled" value="{{ rent_dict.last_name}}"></div></td>
+            </tr>
+            <tr>
+                <td  title="Phone">
+                    <div class="field"><span>Phone:</span><input id="id_phone" name="id_phone" disabled="disabled" value="{{ rent_dict.phone}}"></div></td>
+            </tr>
+            <tr>
+                <td  title="E-mail">
+                    <div class="field"><span>E-mail:</span><input id="id_email" name="id_email" disabled="disabled" value="{{ rent_dict.email}}"></div></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td  title="Transport Id">
+                    <div class="field"><span>Transport Id:</span>{{ form.transport_id}}<span class="red">&nbsp;{{ form.transport_id.errors|striptags }}</span></div></td>
+            </tr>
+
+            <tr>
+                <td  title="Start Date">
+                    <div class="field"><span>Start Date:</span>{{ form.start_date}}<span class="red">&nbsp;{{ form.start_date.errors|striptags }}</span></div></td>
+            </tr>
+
+            <tr>
+                <td  title="End Date">
+                    <div class="field"><span>End Date:</span>{{ form.end_date}}<span class="red">&nbsp;{{ form.end_date.errors|striptags }}</span></div></td>
+            </tr>
+
+             <tr>
+                <td  title="First Name">
+                    <div class="field"><span>First Name:</span>{{ form.first_name}}<span class="red">&nbsp;{{ form.first_name.errors|striptags }}</span></div></td>
+            </tr>
+              <tr>
+                <td  title="Last Name">
+                    <div class="field"><span>Last Name:</span>{{ form.last_name}}<span class="red">&nbsp;{{ form.last_name.errors|striptags }}</span></div></td>
+            </tr>
+            <tr>
+                <td  title="Phone">
+                    <div class="field"><span>Phone:</span>{{ form.phone}}<span class="red">&nbsp;{{ form.phone.errors|striptags }}</span></div></td>
+            </tr>
+            <tr>
+                <td  title="E-mail">
+                    <div class="field"><span>E-mail:</span>{{ form.email}}<span class="red">&nbsp;{{ form.email.errors|striptags }}</span></div></td>
+            </tr>
+        {% endif %}
+        {% if total_amount %}
+        <tr>
+            <td  title="Amount to pay">
+                <div class="field"><span>Amount to pay:</span><input id="id_amount_to_pay" name="all_inputs" disabled="disabled" value="{{ total_amount}}"></div></td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td  title="Amount in cash">
+                <div class="field"><span>Amount in cash:</span>{{ form2.amount}}<span class="red">&nbsp;{{ form2.amount.errors|striptags }}</span></div></td>
+        </tr>
+        <tr><td><br></td></tr>
+        <tr><td><input name="execute_button" value="Pay" id="execute_button" value="" type="button"/></td></tr>
+        </tbody>
+    </table>
+</form>
+<div style="margin-top: 200px">
+<a href="/">Home</a>
+</div>
+<script>
+    $("#execute_button").click(function() {
+        $(this).unbind("click");
+        $("#id_transport_id").removeAttr('disabled');
+        $("#id_start_date").removeAttr('disabled');
+        $("#id_end_date").removeAttr('disabled');
+        $("#id_first_name").removeAttr('disabled');
+        $("#id_last_name").removeAttr('disabled');
+        $("#id_phone").removeAttr('disabled');
+        $("#id_email").removeAttr('disabled');
+        document.ext_payment.submit();
+    });
+</script>
+{% endblock %}

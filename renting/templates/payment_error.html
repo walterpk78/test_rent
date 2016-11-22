@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}User Payment{% endblock %}
+{% block head %}User Payment{% endblock %}
+{% block content %}
+    <div style="position:relative;top: 120px;">
+    <h1>Payment Fail</h1>
+    <h3>Returned Error: {{ error }}</h3>
+    <a href="pay/">Retry</a>
+    </div>
+{% endblock %}

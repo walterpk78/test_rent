@@ -1,0 +1,1149 @@
+[2016-11-22 03:24:01,742] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/camelia/PycharmProjects/test/renting/rentomatic/views.py", line 85, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/camelia/PycharmProjects/virtalenv/test/local/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 09:55:35,134] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 124, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 09:55:35,204] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: Cannot resolve keyword 'start_date_at' into field. Choices are: amount, creation_time, email, end_date, first_name, id, last_name, phone, rented, start_date, transport, transport_id
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 103, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 69, in create_rent_record
+    end_date_at__range=(rent_dict['start_date'], rent_dict['end_date'])))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1247, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1133, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1019, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1327, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'start_date_at' into field. Choices are: amount, creation_time, email, end_date, first_name, id, last_name, phone, rented, start_date, transport, transport_id
+[2016-11-22 09:57:10,980] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 124, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 09:57:10,985] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: Unsupported lookup 'at' for DateField or join on the field not permitted.
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 103, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 69, in create_rent_record
+    end_date__at__range=(rent_dict['start_date'], rent_dict['end_date'])))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1247, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1084, in build_lookup
+    lhs = self.try_transform(lhs, name, lookups)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1099, in try_transform
+    (name, lhs.output_field.__class__.__name__))
+FieldError: Unsupported lookup 'at' for DateField or join on the field not permitted.
+[2016-11-22 10:04:50,058] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 126, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 10:04:50,060] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: must be string, not datetime.date
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 105, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 66, in create_rent_record
+    start_date = datetime.strptime(rent_dict['start_date'], "%Y-%m-%d")
+TypeError: must be string, not datetime.date
+[2016-11-22 10:04:54,492] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 126, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 10:05:12,884] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: must be string, not datetime.date
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 105, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 66, in create_rent_record
+    start_date = datetime.strptime(rent_dict['start_date'], "%Y-%m-%d")
+TypeError: must be string, not datetime.date
+[2016-11-22 10:05:41,192] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 124, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 10:06:09,726] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: global name 'start_date' is not defined
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 103, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 68, in create_rent_record
+    start_date__at__range=(start_date, end_date)) | Q(
+NameError: global name 'start_date' is not defined
+[2016-11-22 10:06:39,812] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 124, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 10:06:58,840] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: Unsupported lookup 'at' for DateField or join on the field not permitted.
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 103, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 69, in create_rent_record
+    end_date__at__range=(rent_dict['start_date'], rent_dict['end_date'])))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1247, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1084, in build_lookup
+    lhs = self.try_transform(lhs, name, lookups)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1099, in try_transform
+    (name, lhs.output_field.__class__.__name__))
+FieldError: Unsupported lookup 'at' for DateField or join on the field not permitted.
+[2016-11-22 10:07:53,442] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 125, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 10:10:37,179] api ERROR    --> [@pay] Error to get table Transport with id: 1
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 124, in get_transport_obj
+    transport = Transport.objects.get(id='transport_id')
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1187, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1083, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/lookups.py", line 59, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'transport_id'
+[2016-11-22 10:24:25,659] api ERROR    --> [@rent] Exception: Invalid filter: 'format_euro'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 170, in rent
+    return pay(request, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 25, in wrapper
+    return render(request, tmpl, output)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid filter: 'format_euro'
+[2016-11-22 10:49:52,186] api ERROR    --> [@rent] Exception: global name 'render_to_response' is not defined
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 171, in rent
+    return render_to_response(request, "pay.html", rent_dict)
+NameError: global name 'render_to_response' is not defined
+[2016-11-22 11:08:49,507] api ERROR    --> [@rent] Exception: global name 'render_to_response' is not defined
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 171, in rent
+    return render_to_response("pay.html", rent_dict, context_instance=RequestContext(request))
+NameError: global name 'render_to_response' is not defined
+[2016-11-22 11:10:14,398] api ERROR    --> [@rent] Exception: global name 'RequestContext' is not defined
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 172, in rent
+    return render_to_response("pay.html", rent_dict, context_instance=RequestContext(request))
+NameError: global name 'RequestContext' is not defined
+[2016-11-22 11:11:07,165] api ERROR    --> [@rent] Exception: render_to_response() got an unexpected keyword argument 'context_instance'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 173, in rent
+    return render_to_response("pay.html", rent_dict, context_instance=RequestContext(request))
+TypeError: render_to_response() got an unexpected keyword argument 'context_instance'
+[2016-11-22 11:20:09,351] api ERROR    --> [@rent] Exception: Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 172, in rent
+    return pay(request, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 27, in wrapper
+    return render(request, tmpl, output)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/defaulttags.py", line 439, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/urls/resolvers.py", line 392, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns)
+NoReverseMatch: Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[2016-11-22 11:20:38,722] api ERROR    --> [@rent] Exception: Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 172, in rent
+    return pay(request, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 27, in wrapper
+    return render(request, tmpl, output)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/defaulttags.py", line 439, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/urls/resolvers.py", line 392, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns)
+NoReverseMatch: Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[2016-11-22 11:21:23,765] api ERROR    --> [@rent] Exception: Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 172, in rent
+    return pay(request, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 27, in wrapper
+    return render(request, tmpl, output)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/template/defaulttags.py", line 439, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/urls/resolvers.py", line 392, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns)
+NoReverseMatch: Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[2016-11-22 11:45:43,413] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 80, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 11:51:18,456] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 80, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 11:52:04,712] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 80, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:09:19,728] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 80, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:12:16,096] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 80, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:21:29,934] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:global name 'ast' is not defined
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 89, in pay
+    form = RentForm(get_dict_from_request(request))
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 68, in get_dict_from_request
+    post_dict = ast.literal_eval(base64.b64decode(request.POST.get('post')))
+NameError: global name 'ast' is not defined
+[2016-11-22 12:22:17,748] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:global name 'base64' is not defined
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 90, in pay
+    form = RentForm(get_dict_from_request(request))
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 69, in get_dict_from_request
+    post_dict = ast.literal_eval(base64.b64decode(request.POST.get('post')))
+NameError: global name 'base64' is not defined
+[2016-11-22 12:23:13,322] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:malformed string
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 90, in pay
+    form = RentForm(get_dict_from_request(request))
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 69, in get_dict_from_request
+    post_dict = ast.literal_eval(request.POST)
+  File "/usr/lib64/python2.7/ast.py", line 80, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib64/python2.7/ast.py", line 79, in _convert
+    raise ValueError('malformed string')
+ValueError: malformed string
+[2016-11-22 12:28:08,128] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 89, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:28:39,027] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 89, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:34:26,054] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 96, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:34:51,968] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 96, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:45:55,789] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 96, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:48:12,553] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 96, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 12:55:18,496] api ERROR    --> [@pay] Internal error, Exception: unsupported operand type(s) for -: 'str' and 'str'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 94, in pay
+    return {"form2": form2, "rent_dict": rent_dict, "total_amount": get_total(rent_dict['start_date'], rent_dict['end_date'], transport)}
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 200, in get_total
+    delta = end_date - start_date
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+[2016-11-22 13:01:30,853] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'amount'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 103, in pay
+    logger.info("[@pay]Amount input: " + str(form2.cleaned_data['amount']))
+KeyError: 'amount'
+[2016-11-22 13:06:13,396] api INFO     --> [@pay]Amount input: 4000
+[2016-11-22 13:07:06,696] api INFO     --> [@pay]Amount input: 3400
+[2016-11-22 13:08:32,641] api INFO     --> [@pay]Amount input: 3200
+[2016-11-22 13:08:45,679] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:"'transport_id'"
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 110, in pay
+    transport = get_transport_obj(int(request.POST['transport_id']))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'transport_id'"
+[2016-11-22 13:12:36,735] api INFO     --> [@pay]Amount input: 3400
+[2016-11-22 13:12:38,679] api INFO     --> [@pay]Converted Amount input: 340000
+[2016-11-22 13:14:07,212] api INFO     --> [@pay]Amount input: 400
+[2016-11-22 13:14:15,727] api INFO     --> [@pay]Converted Amount input: 40000
+[2016-11-22 13:15:29,184] api INFO     --> [@pay]Amount input: 40
+[2016-11-22 13:15:32,728] api INFO     --> [@pay]Converted Amount input: 4000
+[2016-11-22 13:16:35,131] api INFO     --> [@pay]Amount input: 40
+[2016-11-22 13:16:36,641] api INFO     --> [@pay]Converted Amount input: 4000
+[2016-11-22 13:17:59,534] api INFO     --> [@pay]Amount input: 40
+[2016-11-22 13:18:07,060] api INFO     --> [@pay]Converted Amount input: 4000
+[2016-11-22 13:19:17,821] api INFO     --> [@pay]Amount input: 5
+[2016-11-22 13:19:19,309] api INFO     --> [@pay]Converted Amount input: 500
+[2016-11-22 13:22:42,354] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 13:23:31,839] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 13:24:07,856] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 13:25:05,201] api INFO     --> [@pay]Amount input: 2
+[2016-11-22 13:25:13,941] api INFO     --> [@pay]Converted Amount input: 200
+[2016-11-22 13:30:03,293] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 13:30:33,998] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 13:31:22,420] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 13:33:19,372] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:06:04,025] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:07:12,737] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:09:36,222] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:10:58,437] api INFO     --> [@pay]Amount input: 2
+[2016-11-22 14:11:12,816] api INFO     --> [@pay]Converted Amount input: 200
+[2016-11-22 14:13:55,955] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:15:29,100] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:16:16,193] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:17:47,795] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:20:55,337] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:23:31,231] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:24:49,479] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:25:21,535] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:26:06,262] api INFO     --> [@pay]Amount input: 3
+[2016-11-22 14:26:14,140] api INFO     --> [@pay]Converted Amount input: 300
+[2016-11-22 14:28:28,432] api INFO     --> [@pay]Amount input: 2
+[2016-11-22 14:28:31,352] api INFO     --> [@pay]Converted Amount input: 200
+[2016-11-22 14:30:08,802] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: [@create_rent_record] date interval already exist
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 188, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 177, in create_rent_record
+    raise Exception("[@create_rent_record] date interval already exist")
+Exception: [@create_rent_record] date interval already exist
+[2016-11-22 14:30:10,345] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: [@create_rent_record] date interval already exist
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 188, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 177, in create_rent_record
+    raise Exception("[@create_rent_record] date interval already exist")
+Exception: [@create_rent_record] date interval already exist
+[2016-11-22 14:30:14,409] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: [@create_rent_record] date interval already exist
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 188, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 177, in create_rent_record
+    raise Exception("[@create_rent_record] date interval already exist")
+Exception: [@create_rent_record] date interval already exist
+[2016-11-22 14:30:17,554] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: [@create_rent_record] date interval already exist
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 188, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 177, in create_rent_record
+    raise Exception("[@create_rent_record] date interval already exist")
+Exception: [@create_rent_record] date interval already exist
+[2016-11-22 14:30:18,455] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: [@create_rent_record] date interval already exist
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 188, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 177, in create_rent_record
+    raise Exception("[@create_rent_record] date interval already exist")
+Exception: [@create_rent_record] date interval already exist
+[2016-11-22 14:30:24,527] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: [@create_rent_record] date interval already exist
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 188, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 177, in create_rent_record
+    raise Exception("[@create_rent_record] date interval already exist")
+Exception: [@create_rent_record] date interval already exist
+[2016-11-22 14:31:34,098] api ERROR    --> [@pay] Unable to create rent record in DB , or already exits, Exception: [@create_rent_record] date interval already exist
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 188, in rent
+    rent = create_rent_record(t, rent_dict)
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 177, in create_rent_record
+    raise Exception("[@create_rent_record] date interval already exist")
+Exception: [@create_rent_record] date interval already exist
+[2016-11-22 14:32:44,758] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:37:36,874] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:43:41,440] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:43:54,247] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:47:26,224] api ERROR    --> [@pay] Internal exception while registering and creating db tables, Exception:'unicode' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 100, in pay
+    if form2.is_valid():
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 169, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 161, in errors
+    self.full_clean()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 370, in full_clean
+    self._clean_fields()
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/forms.py", line 382, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "/home/walter/virtualenvs/test/lib/python2.7/site-packages/django/forms/widgets.py", line 238, in value_from_datadict
+    return data.get(name)
+AttributeError: 'unicode' object has no attribute 'get'
+[2016-11-22 14:50:49,686] api INFO     --> [@pay]Amount input: 2
+[2016-11-22 14:50:49,691] api INFO     --> [@pay]Converted Amount input: 200
+[2016-11-22 14:51:20,816] api INFO     --> [@pay]Amount input: 3
+[2016-11-22 14:51:20,823] api INFO     --> [@pay]Converted Amount input: 300
+[2016-11-22 14:54:00,222] api INFO     --> [@pay]Amount input: 7
+[2016-11-22 14:54:00,227] api INFO     --> [@pay]Converted Amount input: 700
+[2016-11-22 14:57:28,978] api ERROR    --> [@pay] Internal error, Exception: can't multiply sequence by non-int of type 'float'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 108, in pay
+    form2 = PaymentForm(get_form2_dict(request))
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 86, in get_form2_dict
+    "amount": int(round((str(request.POST['amount']) * 100.0)))
+TypeError: can't multiply sequence by non-int of type 'float'
+[2016-11-22 14:58:04,105] api ERROR    --> [@pay] Internal error, Exception: invalid literal for int() with base 10: '3.0'
+Traceback (most recent call last):
+  File "/home/walter/test5/test/renting/rentomatic/views.py", line 109, in pay
+    cash_amount = int(request.POST['amount'])
+ValueError: invalid literal for int() with base 10: '3.0'
+[2016-11-22 15:00:33,682] api INFO     --> [@pay]Amount input: 300
+[2016-11-22 15:00:33,688] api INFO     --> [@pay]Converted Amount input: 300
