@@ -72,7 +72,7 @@ open a web browser and point it to your port(optional for tensting)
 This is a normal django app you can use any deployment system like Jenkins
 
 **View Dashboards**
-![superset-dashboard](https://github.com/walterpk78/test_rent/rent-o-matic.png)
+![rent-o-matic-dashboard](https://github.com/walterpk78/test_rent/rent-o-matic.png)
 
 
 ## Built With
