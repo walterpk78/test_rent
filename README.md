@@ -64,15 +64,12 @@ touch LOGS/api.log
 ## Running system
 open a web browser and point it to your port(optional for tensting)
 ```
-# manage.py runserver localhost:8080
+# python manage.py runserver localhost:8080
 ```
 
 ## Deployment
 
 This is a normal django app you can use any deployment system like Jenkins
-
-**View Dashboards**
-![rent-o-matic-dashboard](https://github.com/walterpk78/test_rent/rent-o-matic.png)
 
 
 ## Built With
